@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.all(30),
               color: Colors.brown[200],
               child: const Text(
-                "My coffee list",
+                "How do you like your coffee?",
                 style: TextStyle(
                     fontSize: 20, decoration: TextDecoration.underline),
               ),
@@ -31,7 +31,13 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.all(30),
               color: Colors.brown[100],
               child: const MyCoffeePrefs(),
-            )
+            ),
+            Expanded(
+                child: Image.asset(
+              "assets/imgs/coffee_bg.jpg",
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.bottomCenter,
+            )),
           ],
         ));
   }
