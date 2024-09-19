@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
 
-class MyCoffeePrefs extends StatelessWidget {
+class MyCoffeePrefs extends StatefulWidget {
   const MyCoffeePrefs({super.key});
+
+  @override
+  State<MyCoffeePrefs> createState() => _MyCoffeePrefsState();
+}
+
+class _MyCoffeePrefsState extends State<MyCoffeePrefs> {
+  int strength = 1;
+  int sugars = 1;
+
+  void increaseStrength() {
+    setState(() {
+      strength = strength < 5 ? strength + 1 : 1;
+    }); // wrap it in a setState() to trigger a rebuild of the ui so that the ui may change
+  }
+
+  void increaseSugar() {
+    setState(() {
+      sugars = sugars < 5 ? sugars + 1 : 0;
+    }); // wrap it in a setState() to trigger a rebuild of the ui may change
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,28 +29,50 @@ class MyCoffeePrefs extends StatelessWidget {
       children: [
         Row(
           children: [
+            const SizedBox(width: 5),
             const Text("Strength: "),
-            const Text("3"),
-            Image.asset(
-              "assets/imgs/coffee_bean.png",
-              width: 20,
-              color: Colors.brown[100],
-              colorBlendMode: BlendMode.multiply,
+            for (int i = 0; i < strength; i++)
+              Image.asset(
+                "assets/imgs/coffee_bean.png",
+                width: 20,
+                color: Colors.brown[100],
+                colorBlendMode: BlendMode.multiply,
+              ),
+            Text(
+              "($strength)",
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(width: 100),
+            const Expanded(child: SizedBox()),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                  backgroundColor: Colors.brown, foregroundColor: Colors.white),
+              onPressed: increaseStrength,
+              child: const Text("+"),
+            )
           ],
         ),
         Row(
           children: [
+            const SizedBox(width: 5),
             const Text("Sugars: "),
-            const Text("5"),
-            Image.asset(
-              "assets/imgs/sugar_cube.png",
-              width: 20,
-              color: Colors.brown[100],
-              colorBlendMode: BlendMode.multiply,
+            for (int i = 0; i < sugars; i++)
+              Image.asset(
+                "assets/imgs/sugar_cube.png",
+                width: 20,
+                color: Colors.brown[100],
+                colorBlendMode: BlendMode.multiply,
+              ),
+            Text(
+              "($sugars)",
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(width: 50),
+            const Expanded(child: SizedBox()),
+            FilledButton(
+                style: FilledButton.styleFrom(
+                    backgroundColor: Colors.brown,
+                    foregroundColor: Colors.white),
+                onPressed: increaseSugar,
+                child: const Text("+"))
           ],
         )
       ],
