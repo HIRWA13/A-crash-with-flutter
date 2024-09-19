@@ -55,6 +55,7 @@ class _MyCoffeePrefsState extends State<MyCoffeePrefs> {
           children: [
             const SizedBox(width: 5),
             const Text("Sugars: "),
+            if (sugars == 0) const Text("No suggar..."),
             for (int i = 0; i < sugars; i++)
               Image.asset(
                 "assets/imgs/sugar_cube.png",
