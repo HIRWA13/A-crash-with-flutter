@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_intro/styled_text.dart';
 
 class MyCoffeePrefs extends StatefulWidget {
   const MyCoffeePrefs({super.key});
@@ -30,7 +31,7 @@ class _MyCoffeePrefsState extends State<MyCoffeePrefs> {
         Row(
           children: [
             const SizedBox(width: 5),
-            const Text("Strength: "),
+            const StyledText("Strength: "),
             for (int i = 0; i < strength; i++)
               Image.asset(
                 "assets/imgs/coffee_bean.png",
@@ -54,7 +55,7 @@ class _MyCoffeePrefsState extends State<MyCoffeePrefs> {
         Row(
           children: [
             const SizedBox(width: 5),
-            const Text("Sugars: "),
+            const StyledText("Sugars: "),
             if (sugars == 0) const Text("No suggar..."),
             for (int i = 0; i < sugars; i++)
               Image.asset(

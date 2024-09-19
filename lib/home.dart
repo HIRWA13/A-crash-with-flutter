@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intro/coffee_prefs.dart';
+import 'package:flutter_intro/styled_text.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -19,14 +20,9 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              padding: const EdgeInsets.all(30),
-              color: Colors.brown[200],
-              child: const Text(
-                "How do you like your coffee?",
-                style: TextStyle(
-                    fontSize: 20, decoration: TextDecoration.underline),
-              ),
-            ),
+                padding: const EdgeInsets.all(30),
+                color: Colors.brown[200],
+                child: const StyledText("How I like my coffee...")),
             Container(
               padding: const EdgeInsets.all(30),
               color: Colors.brown[100],
