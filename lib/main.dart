@@ -1,28 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_intro/home.dart';
+// import 'package:flutter_intro/home.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Hello App Bar'),
-        centerTitle: true,
-        backgroundColor: Colors.blue[600],
-        titleTextStyle: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-      ),
-      body: const Center(
-        child: Text("Hello flutter app"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.blue[500],
-        tooltip: 'Add',
-        elevation: 10,
-        child: const Icon(Icons.add, color: Colors.white), // Increase the elevation for a more prominent button
-      ),
-    ),
+  runApp(const MaterialApp(
+    home: Home(),
   ));
+}
+
+class SandBox extends StatelessWidget {
+  const SandBox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Sandbox for learning",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.brown[600],
+        centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            color: Colors.red[600],
+            padding: const EdgeInsets.all(40),
+            child: const Text("One"),
+          ),
+          Container(
+            color: Colors.blue[600],
+            padding: const EdgeInsets.all(40),
+            child: const Text(
+              "Another container",
+              style: TextStyle(color: Colors.white),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
