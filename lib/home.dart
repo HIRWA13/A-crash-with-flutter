@@ -28,6 +28,7 @@ class Home extends StatelessWidget {
               color: Colors.brown[100],
               child: const MyCoffeePrefs(),
             ),
+            
             Expanded(
                 child: Image.asset(
               "assets/imgs/coffee_bg.jpg",
