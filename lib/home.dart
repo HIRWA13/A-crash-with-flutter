@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
                 padding: const EdgeInsets.all(30),
                 color: Colors.brown[300],
                 child: const Text(
-                    "Coffee is great but it's also not good for your health")),
+                    "Coffee is great but it's also not good when it's alot for your health")),
             Expanded(
                 child: Image.asset(
               "assets/imgs/coffee_bg.jpg",
